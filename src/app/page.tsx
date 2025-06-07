@@ -1,30 +1,39 @@
-// import Image from "next/image";
-import Link from "next/link";
-
+"use client"
+import PDF from "./pdf/page";
+import Video from "./Video_Audio/page";
 
 import Hearder from "./components/Header";
+import { useState } from "react";
 
 export default function Home() {
-  return (
-    <div className="p-5 h-full bg-slate-300">
-      <Hearder />
-      <Link
-      className="font-bold p-10 flex justify-center"
-      href={"./Video_Audio"}
-      ><h1 className="p-5 bg-amber-600 text-2xl text-white underline rounded-3xl  ">
-        Video
-        </h1>
-      </Link>
 
-      <Link
-      className="font-bold p-10 flex justify-center"
-      href={"./pdf"}
-      ><h1 className="p-5 bg-amber-600 text-2xl text-white underline rounded-3xl  ">
+  const [content, setContent] = useState("pdf")
+  return (
+    <div className="h-screen p-5 bg-slate-300">
+
+    <div className="">
+      <Hearder />
+       </div>
+      <div className="flex text-center justify-center flex-col  gap-5 pt-5">
+
+
+      <h1 
+      onClick={()=> setContent("pdf")}
+      
+      className="p-5  bg-amber-600 text-2xl text-white underline rounded-3xl cursor-pointer">
         PDF
         </h1>
-      </Link>
- 
-      
-    </div>
+
+        <h1
+        onClick={()=>setContent("video")}
+         className="p-5 bg-amber-600 text-2xl text-white underline rounded-3xl  cursor-pointer ">
+        video
+        </h1>
+        {content === "pdf" ? <PDF />: <Video />}
+
+        </div>
+
+       </div>
+   
   );
 }

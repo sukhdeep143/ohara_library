@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 
-export default function Main() {
+export default function PDF() {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
 
