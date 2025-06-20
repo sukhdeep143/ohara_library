@@ -4,6 +4,7 @@ import Video from "./Video_Audio/page";
 
 import Hearder from "./components/Header";
 import { useState } from "react";
+import Footer from "./components/Footer";
 
 export default function Home() {
 
@@ -32,6 +33,7 @@ export default function Home() {
         {content === "pdf" ? <PDF />: <Video />}
 
         </div>
+        <Footer />
 
        </div>
    
