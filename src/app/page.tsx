@@ -1,41 +1,26 @@
-"use client"
+"use client";
 import PDF from "./pdf/page";
 import Video from "./Video_Audio/page";
 
-import Hearder from "./components/Header";
 import { useState } from "react";
-import Footer from "./components/Footer";
 
 export default function Home() {
-
-  const [content, setContent] = useState("pdf")
+  const [content, setContent] = useState("pdf");
   return (
-    <div className="h-screen p-5 bg-slate-300">
+      <div className="text-center ">
+        <button
+          onClick={() => setContent("pdf")}
+          className="p-5  bg-amber-600  text-white text-2xl rounded-3xl cursor-pointer font-bold m-2">
+          PDF
+        </button>
 
-    <div className="">
-      <Hearder />
-       </div>
-      <div className="flex text-center justify-center flex-col  gap-5 pt-5">
+        <button
+          onClick={() => setContent("video")}
+          className="p-5 bg-amber-600 text-2xl text-white  rounded-3xl  cursor-pointer font-bold ">
+          VIDEO
+        </button>
+        {content === "pdf" ? <PDF /> : <Video />}
+      </div>
 
-
-      <h1 
-      onClick={()=> setContent("pdf")}
-      
-      className="p-5  bg-amber-600 text-2xl text-white underline rounded-3xl cursor-pointer">
-        PDF
-        </h1>
-
-        <h1
-        onClick={()=>setContent("video")}
-         className="p-5 bg-amber-600 text-2xl text-white underline rounded-3xl  cursor-pointer ">
-        video
-        </h1>
-        {content === "pdf" ? <PDF />: <Video />}
-
-        </div>
-        <Footer />
-
-       </div>
-   
   );
 }

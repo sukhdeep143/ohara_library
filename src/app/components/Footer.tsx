@@ -1,9 +1,9 @@
 import React from "react";
-// import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-gray-900 text-white py-6 px-4 mt-10">
+    <footer className="bg-gray-900 m-2 rounded-3xl text-white py-6 px-10 pt-10 pb-10 mt-10">
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 items-center text-center md:text-left">
         {/* Left - Logo/Name */}
         <div className="text-xl font-bold">
@@ -12,7 +12,7 @@ const Footer: React.FC = () => {
         </div>
 
         {/* Center - Navigation Links */}
-        <div className="space-x-4">
+        <div className="space-x-4 text-center">
           <a href="/about" className="hover:text-gray-300">About</a>
           <a href="/contact" className="hover:text-gray-300">Contact</a>
           <a href="/privacy" className="hover:text-gray-300">Privacy</a>
@@ -21,13 +21,13 @@ const Footer: React.FC = () => {
         {/* Right - Social Icons */}
         <div className="flex justify-center md:justify-end space-x-4">
           <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer" className="hover:text-gray-300">
-            {/* <FaGithub size={20} /> */}
+            <FaGithub size={20} />
           </a>
           <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer" className="hover:text-gray-300">
-            {/* <FaLinkedin size={20} /> */}
+            <FaLinkedin size={20} />
           </a>
           <a href="https://twitter.com/yourusername" target="_blank" rel="noopener noreferrer" className="hover:text-gray-300">
-            {/* <FaTwitter size={20} /> */}
+            <FaTwitter size={20} />
           </a>
         </div>
       </div>
